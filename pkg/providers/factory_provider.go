@@ -52,6 +52,7 @@ var protocolMetaByName = map[string]protocolMeta{
 	"coding-plan-anthropic":    {defaultAPIBase: "https://coding-intl.dashscope.aliyuncs.com/apps/anthropic"},
 	"alibaba-coding-anthropic": {defaultAPIBase: "https://coding-intl.dashscope.aliyuncs.com/apps/anthropic"},
 	"vllm":                     {defaultAPIBase: "http://localhost:8000/v1", emptyAPIKeyAllowed: true},
+	"ovms":                     {defaultAPIBase: "http://localhost:8000/v3", emptyAPIKeyAllowed: true},
 	"mistral":                  {defaultAPIBase: "https://api.mistral.ai/v1"},
 	"avian":                    {defaultAPIBase: "https://api.avian.io/v1"},
 	"minimax":                  {defaultAPIBase: "https://api.minimaxi.com/v1"},
@@ -220,7 +221,7 @@ func CreateProviderFromConfig(cfg *config.ModelConfig) (LLMProvider, string, err
 
 	case "litellm", "lmstudio", "openrouter", "groq", "zhipu", "gemini", "nvidia", "venice",
 		"ollama", "moonshot", "shengsuanyun", "deepseek", "cerebras",
-		"vivgrid", "volcengine", "vllm", "qwen", "qwen-intl", "qwen-international", "dashscope-intl",
+		"vivgrid", "volcengine", "vllm", "ovms", "qwen", "qwen-intl", "qwen-international", "dashscope-intl",
 		"qwen-us", "dashscope-us", "mistral", "avian", "longcat", "modelscope", "novita",
 		"coding-plan", "alibaba-coding", "qwen-coding", "mimo":
 		// All other OpenAI-compatible HTTP providers
