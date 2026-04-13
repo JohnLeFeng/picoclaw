@@ -59,6 +59,7 @@
 | **OpenRouter**      | `openrouter/`     | `https://openrouter.ai/api/v1`                      | OpenAI    | [获取密钥](https://openrouter.ai/keys)                            |
 | **LiteLLM Proxy**   | `litellm/`        | `http://localhost:4000/v1`                          | OpenAI    | 你的 LiteLLM 代理密钥                                             |
 | **VLLM**            | `vllm/`           | `http://localhost:8000/v1`                          | OpenAI    | 本地                                                              |
+| **OVMS**            | `ovms/`           | `http://localhost:8000/v3`                          | OpenAI    | 本地（无需密钥）                                                  |
 | **Cerebras**        | `cerebras/`       | `https://api.cerebras.ai/v1`                        | OpenAI    | [获取密钥](https://cerebras.ai)                                   |
 | **火山引擎（Doubao）** | `volcengine/`  | `https://ark.cn-beijing.volces.com/api/v3`          | OpenAI    | [获取密钥](https://www.volcengine.com/activity/codingplan?utm_campaign=PicoClaw&utm_content=PicoClaw&utm_medium=devrel&utm_source=OWO&utm_term=PicoClaw) |
 | **神算云**          | `shengsuanyun/`   | `https://router.shengsuanyun.com/api/v1`            | OpenAI    | -                                                                 |
@@ -110,7 +111,7 @@
 |------|------|------|------|
 | `model_name` | string | 是 | 在 agent 配置中引用此模型的唯一名称 |
 | `model` | string | 是 | 厂商/模型标识符（如 `openai/gpt-5.4`、`azure/gpt-5.4`、`anthropic/claude-sonnet-4.6`） |
-| `api_keys` | string[] | 是* | 认证密钥。多个密钥可按请求轮换。本地 provider（Ollama、LM Studio、VLLM）不需要 |
+| `api_keys` | string[] | 是* | 认证密钥。多个密钥可按请求轮换。本地 provider（Ollama、LM Studio、VLLM、OVMS）不需要 |
 | `api_base` | string | 否 | 覆盖默认的 API 端点 URL |
 | `proxy` | string | 否 | 此模型条目的 HTTP 代理 URL |
 | `user_agent` | string | 否 | 自定义 `User-Agent` 请求头（支持 OpenAI 兼容、Anthropic 和 Azure provider） |
@@ -382,7 +383,7 @@ PicoClaw 在发送请求前仅去除外层 `litellm/` 前缀，因此 `litellm/l
 
 PicoClaw 按协议族路由 Provider：
 
-- OpenAI 兼容协议：OpenRouter、OpenAI 兼容网关、Groq、智谱、vLLM 风格端点。
+- OpenAI 兼容协议：OpenRouter、OpenAI 兼容网关、Groq、智谱、vLLM 风格端点和 OVMS。
 - Anthropic 协议：Claude 原生 API 行为。
 - Codex/OAuth 路径：OpenAI OAuth/Token 认证路由。
 

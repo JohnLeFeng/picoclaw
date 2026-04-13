@@ -348,7 +348,7 @@ L'ancienne configuration `providers` est **dépréciée** et a été supprimée 
 
 PicoClaw route les providers par famille de protocole :
 
-- **Compatible OpenAI** : OpenRouter, Groq, Zhipu, endpoints vLLM et la plupart des autres.
+- **Compatible OpenAI** : OpenRouter, Groq, Zhipu, endpoints vLLM, OVMS et la plupart des autres.
 - **Anthropic** : Comportement natif de l'API Claude.
 - **Codex/OAuth** : Route d'authentification OAuth/token OpenAI.
 
