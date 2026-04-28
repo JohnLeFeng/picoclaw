@@ -48,10 +48,14 @@ func supportsWhisperTranscription(modelCfg *config.ModelConfig) bool {
 	case "openai", "litellm", "openrouter", "groq", "zhipu", "gemini", "nvidia",
 		"ollama", "moonshot", "shengsuanyun", "deepseek", "cerebras",
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"vivgrid", "volcengine", "vllm", "qwen", "qwen-portal", "qwen-intl", "qwen-international", "dashscope-intl",
 =======
 		"vivgrid", "volcengine", "vllm", "ovms", "qwen", "qwen-intl", "qwen-international", "dashscope-intl",
 >>>>>>> 793357c6 (Add ovms support)
+=======
+		"vivgrid", "volcengine", "vllm", "ovms", "qwen", "qwen-intl", "qwen-international", "dashscope-intl",
+>>>>>>> 1cbec748785c37593377bc6b74bde7100dcce5a4
 		"qwen-us", "dashscope-us", "mistral", "avian", "minimax", "longcat", "modelscope", "novita",
 		"coding-plan", "alibaba-coding", "qwen-coding", "zai", "mimo":
 		return true
