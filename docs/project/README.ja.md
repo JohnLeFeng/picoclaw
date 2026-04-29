@@ -465,7 +465,7 @@ PicoClaw は `model_list` 設定を通じて 30 以上の LLM Provider をサポ
 }
 ```
 
-Provider の完全な設定詳細は [Provider とモデル](../guides/providers.ja.md) を参照してください。。
+Provider の完全な設定詳細は [Provider とモデル](../guides/providers.ja.md) を参照してください。
 
 </details>
 

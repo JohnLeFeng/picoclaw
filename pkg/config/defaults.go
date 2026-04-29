@@ -274,7 +274,8 @@ func DefaultConfig() *Config {
 			// OVMS (local) - http://localhost:8000
 			{
 				ModelName: "local-ovms",
-				Model:     "ovms/custom-model",
+				Provider:  "ovms",
+				Model:     "custom-model",
 				APIBase:   "http://localhost:8000/v3",
 			},
 
