@@ -21,11 +21,17 @@ func NewModelCommand() *cobra.Command {
 If no argument is provided, shows the current default model.
 If a model name is provided, sets it as the default model.
 
+To onboard a model from a custom OpenAI-compatible endpoint (fetch the
+available list online and pick one), use the 'add' subcommand:
+
+  picoclaw model add --help
+
 Examples:
   picoclaw model                    # Show current default model
   picoclaw model gpt-5.2           # Set gpt-5.2 as default
   picoclaw model claude-sonnet-4.6 # Set claude-sonnet-4.6 as default
   picoclaw model local-model       # Set local vLLM/OVMS server as default
+  picoclaw model add -b URL -k KEY # Add a model from a custom endpoint
 
 Note: 'local-model' is a special value for using a local OpenAI-compatible server
 (running at localhost:8000 by default) which does not require an API key.
@@ -52,6 +58,8 @@ It can be configured to point to vLLM, OVMS (OpenVINO Model Server), or other Op
 		},
 	}
 
+	cmd.AddCommand(newAddCommand())
+
 	return cmd
 }
 
@@ -67,6 +75,9 @@ func showCurrentModel(cfg *config.Config) {
 		fmt.Println("\nAvailable models in your config:")
 		listAvailableModels(cfg)
 	}
+
+	fmt.Println("\nTip: 'picoclaw model add -b URL -k KEY' adds a model from a custom")
+	fmt.Println("     OpenAI-compatible endpoint (see 'picoclaw model add --help').")
 }
 
 func listAvailableModels(cfg *config.Config) {
