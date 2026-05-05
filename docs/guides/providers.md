@@ -117,6 +117,8 @@ This design also enables **multi-agent support** with flexible provider selectio
 
 #### `model_list` Entry Fields
 
+| Field | Type | Required | Description                                                                                                                                                                                                                                 |
+|-------|------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `model_name` | string | Yes | Unique name used to reference this model in agent config                                                                                                                                                                                    |
 | `provider` | string | No | Preferred provider identifier. When present, PicoClaw sends `model` unchanged to that provider                                                                                                                                              |
 | `model` | string | Yes | Native model ID when `provider` is set. If `provider` is omitted, the legacy `provider/model` form is still supported                                                                                                                       |
